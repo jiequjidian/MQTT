@@ -1,0 +1,10 @@
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\bin\Release\netcoreapp2.1\mqttServer_Console.deps.json
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\bin\Release\netcoreapp2.1\mqttServer_Console.runtimeconfig.json
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\bin\Release\netcoreapp2.1\mqttServer_Console.runtimeconfig.dev.json
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\bin\Release\netcoreapp2.1\mqttServer_Console.dll
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\bin\Release\netcoreapp2.1\mqttServer_Console.pdb
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\obj\Release\netcoreapp2.1\mqttServer_Console.csproj.CoreCompileInputs.cache
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\obj\Release\netcoreapp2.1\mqttServer_Console.AssemblyInfoInputs.cache
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\obj\Release\netcoreapp2.1\mqttServer_Console.AssemblyInfo.cs
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\obj\Release\netcoreapp2.1\mqttServer_Console.dll
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_Console\obj\Release\netcoreapp2.1\mqttServer_Console.pdb

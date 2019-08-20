@@ -1,0 +1,14 @@
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\bin\Debug\netcoreapp2.1\mqttWeb.deps.json
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\bin\Debug\netcoreapp2.1\mqttWeb.runtimeconfig.json
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\bin\Debug\netcoreapp2.1\mqttWeb.runtimeconfig.dev.json
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\bin\Debug\netcoreapp2.1\mqttWeb.dll
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\obj\Debug\netcoreapp2.1\mqttWeb.csprojAssemblyReference.cache
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\obj\Debug\netcoreapp2.1\mqttWeb.csproj.CoreCompileInputs.cache
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\obj\Debug\netcoreapp2.1\mqttWeb.RazorAssemblyInfo.cache
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\obj\Debug\netcoreapp2.1\mqttWeb.RazorAssemblyInfo.cs
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\obj\Debug\netcoreapp2.1\mqttWeb.AssemblyInfoInputs.cache
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\obj\Debug\netcoreapp2.1\mqttWeb.AssemblyInfo.cs
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\obj\Debug\netcoreapp2.1\mqttWeb.RazorTargetAssemblyInfo.cache
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\bin\Debug\netcoreapp2.1\mqttWeb.pdb
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\obj\Debug\netcoreapp2.1\mqttWeb.dll
+D:\01,githubRoom\01.MQTT\03.C#_client\mqttWeb\obj\Debug\netcoreapp2.1\mqttWeb.pdb

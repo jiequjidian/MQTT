@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\01,githubRoom\\01.MQTT\\01.website&server\\mqttServer_Console\\mqttServer_Console.csproj": {}
+  },
+  "projects": {
+    "D:\\01,githubRoom\\01.MQTT\\01.website&server\\mqttServer_Console\\mqttServer_Console.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\01,githubRoom\\01.MQTT\\01.website&server\\mqttServer_Console\\mqttServer_Console.csproj",
+        "projectName": "mqttServer_Console",
+        "projectPath": "D:\\01,githubRoom\\01.MQTT\\01.website&server\\mqttServer_Console\\mqttServer_Console.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "D:\\01,githubRoom\\01.MQTT\\01.website&server\\mqttServer_Console\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

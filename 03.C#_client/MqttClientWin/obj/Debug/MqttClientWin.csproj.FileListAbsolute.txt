@@ -1,0 +1,15 @@
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\obj\Debug\MqttClientWin.csprojAssemblyReference.cache
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\obj\Debug\MqttClientWin.FmMqttClient.resources
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\obj\Debug\MqttClientWin.Properties.Resources.resources
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\obj\Debug\MqttClientWin.csproj.GenerateResource.cache
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\obj\Debug\MqttClientWin.csproj.CoreCompileInputs.cache
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\bin\Debug\MqttClientWin.exe.config
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\bin\Debug\MqttClientWin.exe
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\bin\Debug\MqttClientWin.pdb
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\bin\Debug\MQTTnet.Core.dll
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\bin\Debug\MQTTnet.dll
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\obj\Debug\MqttClientWin.csproj.CopyComplete
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\obj\Debug\MqttClientWin.exe
+D:\01,githubRoom\01.MQTT\03.C#_client\MqttClientWin\obj\Debug\MqttClientWin.pdb
