@@ -187,6 +187,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="commData.cs" />
     <Compile Include="FmMqttClient .cs">
       <SubType>Form</SubType>
     </Compile>

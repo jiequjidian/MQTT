@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="warp">
+  <view class="title">{{info.title}}</view>
+  <view class="cTime">{{info.cTime}}</view>
+  
+
+  <view class="page">  
+    <view class="picker_group">  
+      <picker mode="date" value="{{stime_d}}"  end="{{etime_d}}" bindchange="bindDateChange">  
+        <view class="picker">  
+          {{stime_d}}  
+        </view>  
+      </picker>  
+      至  
+      <picker mode="date" value="{{etime_d}}" start="{{stime_d}}" end="2200-01-01" bindchange="bindDateChange2">  
+        <view class="picker">  
+          {{etime_d}}  
+        </view>  
+      </picker>        
+    </view>  
+  </view>  
+
+
+  <view class="section">
+  <!-- <view class="section__title">普通选择器</view> -->
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前曲线：{{array[index]}}
+    </view>
+  </picker>
+</view>
+  <ec-canvas id="mychart" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  <!--<view class="img"><image src="{{info.img}}" class="in-img"></image></view>-->
+  <view class="content">{{info.content}}</view>
+</view>

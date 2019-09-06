@@ -29,12 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.tb_message = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // tb_message
+            // 
+            this.tb_message.Location = new System.Drawing.Point(74, 12);
+            this.tb_message.Multiline = true;
+            this.tb_message.Name = "tb_message";
+            this.tb_message.Size = new System.Drawing.Size(520, 315);
+            this.tb_message.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tb_message);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox tb_message;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

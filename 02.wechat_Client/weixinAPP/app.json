@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/logon/logon",
+    "pages/lists/lists",
+    "pages/detail/detail",
+    "pages/aboutme/aboutme",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "在线水质查看系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/lists/lists",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/aboutme/aboutme",
+        "text": "关于我们"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

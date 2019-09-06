@@ -40,7 +40,8 @@ namespace MqttClientWin
             {
                 var options = new MqttClientTcpOptions
                 {
-                    Server = "106.12.71.251",
+                    //Server = "106.12.71.251",
+                    Server = "127.0.0.1",
                     ClientId = Guid.NewGuid().ToString().Substring(0, 5),
                     UserName = "u001",
                     Password = "p001",

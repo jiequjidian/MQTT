@@ -1,0 +1,56 @@
+<!--lists.wxml-->
+<view class="warp">
+  <!--文章列表模板-->
+  <template name="lists"> 
+ 
+  <navigator url="../../pages/detail/detail?id={{id}}&tb=test" hover-class="navigator-hover" >
+      <view class="imgs">
+        <image src="/images/pi.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+      </view>
+      <view class="infos">
+        <view class="title">进水水质</view>
+        <view class="neirong">PH:{{PH}}</view>
+        <view class="neirong">COD:{{COD}}</view>
+        <view class="neirong">NH3N:{{NH3N}}</view>
+        <view class="neirong">TP:{{TP}}</view>
+        <view class="neirong">TN:{{TN}}</view>
+        <view class="date">{{datetimee}}</view>
+      </view>
+    </navigator>
+   
+  <navigator url="../../pages/detail/detail?id={{id}}&tb=test1" hover-class="navigator-hover">
+      <view class="imgs">
+        <image src="/images/pi.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+      </view>
+      <view class="infos">
+        <view class="title">出水水质</view>
+        <view class="neirong">PH:{{PH1}}</view>
+        <view class="neirong">COD:{{COD1}}</view>
+        <view class="neirong">NH3N:{{NH3N1}}</view>
+        <view class="neirong">TP:{{TP1}}</view>
+        <view class="neirong">TN:{{TN1}}</view>
+        <view class="date">{{datetimee}}</view>
+      </view>
+    </navigator>
+   
+     <navigator url="../../pages/detail/detail?id={{id}}&tb=two" hover-class="navigator-hover">
+      <view class="imgs">
+        <image src="/images/pi.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+      </view>
+      <view class="infos">
+        <view class="title">流量</view>
+        <view class="neirong">进水:{{LL}}</view>
+        <view class="neirong">出水:{{LL1}}</view>
+      </view>
+    </navigator>
+    
+   
+  </template>
+
+  <!--文章列表模板结束-->
+  <!--循环输出列表-->
+  <view wx:for="{{newsList}}" wx:for-item="news" class="list">
+    <template is="lists" data="{{...news}}" />
+
+  </view>
+</view>

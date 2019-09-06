@@ -10,4 +10,8 @@
     <PackageReference Include="MQTTnet" Version="2.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\webForm\" />
+  </ItemGroup>
+
 </Project>

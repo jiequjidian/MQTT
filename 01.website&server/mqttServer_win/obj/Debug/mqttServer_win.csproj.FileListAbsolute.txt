@@ -1,0 +1,15 @@
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\bin\Debug\mqttServer_win.exe.config
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\bin\Debug\mqttServer_win.exe
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\bin\Debug\mqttServer_win.pdb
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\bin\Debug\MQTTnet.Core.dll
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\bin\Debug\MQTTnet.dll
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\obj\Debug\mqttServer_win.csprojAssemblyReference.cache
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\obj\Debug\mqttServer_win.Form1.resources
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\obj\Debug\mqttServer_win.Properties.Resources.resources
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\obj\Debug\mqttServer_win.csproj.GenerateResource.cache
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\obj\Debug\mqttServer_win.csproj.CoreCompileInputs.cache
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\obj\Debug\mqttServer_win.csproj.CopyComplete
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\obj\Debug\mqttServer_win.exe
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\obj\Debug\mqttServer_win.pdb
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\bin\Debug\Newtonsoft.Json.dll
+D:\01,githubRoom\01.MQTT\01.website&server\mqttServer_win\bin\Debug\Newtonsoft.Json.xml
