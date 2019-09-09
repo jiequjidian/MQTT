@@ -10,7 +10,7 @@
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "2.8.2",
 	"appid": "wxb9499c76c7856b2a",
 	"projectname": "mqtt_we",
 	"simulatorType": "wechat",

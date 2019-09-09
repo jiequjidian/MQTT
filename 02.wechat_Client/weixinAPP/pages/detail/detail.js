@@ -18,7 +18,7 @@ var dataList = null;
 Page({
   data: {
     stime_d: (util.endFormatDate(new Date(), 3)) ,//默认起始时间  
-    etime_d: (util.formatTime(new Date())),//默认结束时间 
+    etime_d: (util.endFormatDate(new Date(),0)),//默认结束时间 
 
     array:['进水','出水','流量'],
     index:0,
@@ -86,14 +86,17 @@ Page({
       case 'test':
       var index=0;
         seriesName = ["datetimee","PH","NH3N","COD","TP","TN"];
+        //seriesName = [ "PH", "NH3N", "COD", "TP", "TN"];
         break;
       case 'test1':
       var index=1;
         seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"];
+        //seriesName = [ "PH", "NH3N", "COD", "TP", "TN"];
         break;
       case 'two':
       var index=2;
         seriesName = ["datetimee","进水","出水"];
+       // seriesName = ["js_LL", "cs_LL"];
         break;
       default:
         break;
@@ -102,18 +105,20 @@ Page({
       index: index,//事件触发后获取的值
     });
 
-    this.echartsComponnet = this.selectComponent('#mychart');
-    this.getData(); //获取数据
+    this.echartsComponnet = this.selectComponent('#mychart');   
     setInterval(this.getData,60000)//每隔一分钟更新一次数据
 
     
+  },
+  onShow:function(){
+    this.getData(); //获取数据
   },
 
   getData:function(){
     eTime = this.data.etime_d;
     sTime = this.data.stime_d;
     wx.request({
-      url: 'https://localhost:44373/web/forWeChat.aspx/getData', 
+      url: 'https://106.12.71.251:28256/web/forWeChat.aspx/getData', 
       method:'POST',
       header: {
         'Content-Type': 'application/json'
@@ -176,6 +181,9 @@ Page({
       },
       xAxis: {
         type: 'category',
+        //type: 'time',
+        // data: ['2019/09/08 10:18:23', '2019/09/08 11:17:04','2019/09/08 12:47:05'],
+        // axisLabel:{rotate:-45},
         boundaryGap: false,
       },
       yAxis: {

@@ -10,11 +10,6 @@ namespace serverForReadSQL
     public class SQLserver
     {
 
-
-
-
-
-
         //连接数据库        
 
         public static SqlConnection connection;

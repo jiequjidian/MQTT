@@ -83,7 +83,7 @@ namespace serverForReadSQL.web
                         if (col.DataType == (new DateTime()).GetType())//如果是时间数据
                         {
                             System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));
-                            string timeStr = ((DateTime)row[col.ColumnName]).ToString();
+                            string timeStr = ((DateTime)row[col.ColumnName]).ToString("MM/dd h:m");
                             drow.Add(col.ColumnName, timeStr);
                         }
                         else
