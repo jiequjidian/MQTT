@@ -31,19 +31,21 @@ Page({
       this.phone = this.data.phone,
         this.password = this.data.password,
         wx.request({
-        url: 'https://yuanshengqi.top/Default.aspx?method=getuser',
-
+        url: 'https://yuanshengqi.top/userManager.aspx/getuser',
+        //url: 'https://localhost:44373/userManager.aspx/getuser',
+        method:"POST",
           header: {
             "Content-Type": "application/json"
           },
           data: {
             username: this.phone,
-            password: this.password
+            password: this.password,
+            meth:'1',
           },
 
 
           success: function (res) {           
-            if (res.data == "True") {
+            if (res.data.d == "true") {
               
              // if (res.data!=null) {
                

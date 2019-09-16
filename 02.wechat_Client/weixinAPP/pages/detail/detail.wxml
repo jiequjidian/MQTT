@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="warp">
   <view class="title">{{info.title}}</view>
-  <view class="cTime">{{info.cTime}}</view>
+  
   
 
   <view class="page">  
@@ -21,8 +21,7 @@
   </view>  
 
 
-  <view class="section">
-  <!-- <view class="section__title">普通选择器</view> -->
+  <view class="picker_series">
   <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
     <view class="picker">
       当前曲线：{{array[index]}}

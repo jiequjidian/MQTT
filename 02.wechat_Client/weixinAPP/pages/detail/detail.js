@@ -4,8 +4,11 @@ var util = require('../../utils/util.js');
 
 const app = getApp()
 
+var index=null;
+
 //var Chart=null;
 var seriesName=null;
+var xTime = [];
 var tbName=null;
 var sTime=null;
 var eTime = null;
@@ -16,10 +19,9 @@ var dataList = null;
 
 
 Page({
-  data: {
-    stime_d: (util.endFormatDate(new Date(), 3)) ,//默认起始时间  
-    etime_d: (util.endFormatDate(new Date(),0)),//默认结束时间 
-
+  data: { 
+    stime_d: (util.endFormatDate(new Date(), 3)),//默认起始时间  
+    etime_d: (util.endFormatDate(new Date(), 0)),//默认结束时间 
     array:['进水','出水','流量'],
     index:0,
     ec: {
@@ -28,28 +30,31 @@ Page({
 
     info: {
       id: 1,
-      title: "历史曲线",
+      //title: "历史曲线",
       img: "../../images/1.png",
       cTime: '2018-12-12 00:00:00',
-      content: "这是关于园区泵站趋势测试"
+      //content: "这是关于园区泵站趋势测试"
     }
 
   },
 
   // 时间段选择  
   bindDateChange(e) {
-    let that = this;
+   // let that = this;
     console.log(e.detail.value)
-    that.setData({
-      stime_d: e.detail.value,
+    sTime=e.detail.value;
+   // this.stime_d = e.detail.value;
+    this.setData({
+      stime_d: e.detail.value
     })
     this.getData();
   },
   bindDateChange2(e) {
-    let that = this;
-    that.setData({
-      etime_d: e.detail.value,
-    })
+    // let that = this;
+    eTime=e.detail.value; 
+    this.setData({
+      etime_d: e.detail.value
+    })   
     this.getData();
   },
 
@@ -69,56 +74,56 @@ Page({
         seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"];
         break;
       case "2":
-        tbName = "two";
-        seriesName = ["datetimee", "js_LL", "cs_LL"];
+        tbName = "two";       
+        seriesName = ['datetimee','进水流量','出水流量'];
         break;
       default:
         break;
     };
 
-    this.getData();
-    //this.getData(); //刷新曲线
+    this.getData();//刷新曲线
 
   },
   onLoad: function (options) {
+    sTime= (util.endFormatDate(new Date(), 3));//默认起始时间  
+    eTime= (util.endFormatDate(new Date(), 0)),//默认结束时间 
     tbName = options.tb;
     switch (options.tb) {
       case 'test':
-      var index=0;
+        this.index=0;
         seriesName = ["datetimee","PH","NH3N","COD","TP","TN"];
-        //seriesName = [ "PH", "NH3N", "COD", "TP", "TN"];
         break;
       case 'test1':
-      var index=1;
+        this.index=1;
         seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"];
-        //seriesName = [ "PH", "NH3N", "COD", "TP", "TN"];
         break;
       case 'two':
-      var index=2;
-        seriesName = ["datetimee","进水","出水"];
-       // seriesName = ["js_LL", "cs_LL"];
+        this.index=2;
+        seriesName = ["datetimee", "进水流量","出水流量"];  
         break;
       default:
         break;
     };
     this.setData({
-      index: index,//事件触发后获取的值
+      index: this.index,//事件触发后获取的值
     });
 
     this.echartsComponnet = this.selectComponent('#mychart');   
-    setInterval(this.getData,60000)//每隔一分钟更新一次数据
-
-    
+    //setInterval(this.getData,60000)//每隔一分钟更新一次数据
+    setTimeout(this.getData, 1000);
   },
-  onShow:function(){
-    this.getData(); //获取数据
-  },
+//   onShow:function(){
+// setTimeout(this.getData,1000);
+//   },
+ 
 
   getData:function(){
-    eTime = this.data.etime_d;
-    sTime = this.data.stime_d;
+    var sTimeS = sTime;
+   var eTimeS = eTime;
+   
     wx.request({
-      url: 'https://106.12.71.251:28256/web/forWeChat.aspx/getData', 
+      url: 'https://yuanshengqi.top/forWeChat.aspx/getData', 
+      //url: "https://localhost:44373/forWeChat.aspx/getData",
       method:'POST',
       header: {
         'Content-Type': 'application/json'
@@ -127,15 +132,15 @@ Page({
 
       data: { tb: tbName, startTime: sTime, endTime: eTime, seriesNames: seriesName },
       success(res) {
-        dataList = JSON.parse(res.data.d);       
+        dataList = JSON.parse(res.data.d);   
+        for (var ti in dataList){
+          var nS = dataList[ti].datetimee;
+         xTime[ti]=nS;
+         // xTime.push(nS);//顺序是乱的
+        }    
       }
     })
-    this.initChart();
-    // if (!Chart) {
-    //   this.initChart();
-    // } else {
-    //   this.setOption(this.getOption)
-    // }
+    setTimeout(this.initChart, 1000)  
   },
 
   initChart:function () {
@@ -161,13 +166,14 @@ Page({
     // 指定图表的配置项和数据
     var option = {
       title: {
-        text: '园区泵站',
+        //text: '园区泵站',
         left: 'center'
       },
       legend: {
         top: 25,
         bottom: 50,
         left: 'center',
+       // data: seName,
         z: 100
       },
 
@@ -180,7 +186,15 @@ Page({
         source: dataList,
       },
       xAxis: {
-        type: 'category',
+        type: 'category', 
+        data: xTime,
+        axisLabel: {
+          show: true,
+          textStyle: {
+            //color: '#c3dbff',  //更改坐标轴文字颜色
+            fontSize: 14      //更改坐标轴文字大小
+          }
+        },
         //type: 'time',
         // data: ['2019/09/08 10:18:23', '2019/09/08 11:17:04','2019/09/08 12:47:05'],
         // axisLabel:{rotate:-45},
@@ -189,6 +203,14 @@ Page({
       yAxis: {
         x: 'center',
         type: 'value',
+        axisLabel: {
+          show: true,
+          textStyle: {
+            //color: '#c3dbff',  //更改坐标轴文字颜色
+            fontSize: 14      //更改坐标轴文字大小
+          }
+        },
+       
         splitLine: {
           lineStyle: {
             type: 'dashed'
@@ -214,6 +236,5 @@ Page({
     };
     return option;
   },
-
   
 })

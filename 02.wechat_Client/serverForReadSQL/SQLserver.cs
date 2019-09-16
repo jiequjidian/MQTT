@@ -101,7 +101,7 @@ namespace serverForReadSQL
             try
             {                             
 
-                SqlParameter[] para = { new SqlParameter("@Sdate", DateTime.Parse(start_time)), new SqlParameter("@Edate", DateTime.Parse(end_time)) };
+                SqlParameter[] para = { new SqlParameter("@tb",tb), new SqlParameter("@Sdate", DateTime.Parse(start_time)), new SqlParameter("@Edate", DateTime.Parse(end_time)) };
 
                 tableReturn = GetDataSet("readeSQL", CommandType.StoredProcedure, para);
                 try
@@ -126,11 +126,11 @@ namespace serverForReadSQL
 
                 SqlParameter[] para = { new SqlParameter("@Sdate", DateTime.Parse(start_time)), new SqlParameter("@Edate", DateTime.Parse(end_time)) };
 
-                tableReturn = GetDataSet("dischargeTable", CommandType.StoredProcedure, para);              
+                tableReturn = GetDataSet("dischargeTable", CommandType.StoredProcedure, para);
             }
             catch
             {
-
+                string aaaa = "";
             }
             return tableReturn;
         }

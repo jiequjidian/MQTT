@@ -54,6 +54,20 @@ text-indent: 2em;
   border-bottom: 1rpx solid #efefef;
 
 }
+/* 曲线选择 */
+.picker_series {
+  /* background-color: yellow; */
+  font-size: 32rpx;
+  color: #64bff1;
+  height: 55rpx;
+  width: 260rpx;
+  line-height: 55rpx;
+  margin: 0 2%;
+  padding: 0 2%;
+  border: 1rpx solid #64bff1;
+  border-radius: 30rpx;
+
+}
 
 .picker_group picker {
   /* background-color: yellow; */

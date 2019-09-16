@@ -1,7 +1,11 @@
 //lists.js
 const app = getApp()
+
+//var urlStr='https://yuanshengqi.top/web/forWeChat.aspx/getData';
+
 Page({
   data: {
+   uslStr : 'https://localhost:44373/web/forWeChat.aspx/getData',
     newsList: [
     ]
   },
@@ -16,7 +20,7 @@ Page({
     setInterval(function(){
      
       wx.request({
-        url: 'https://localhost:44373/web/forWeChat.aspx/getData', 
+        url: 'https://yuanshengqi.top/forWeChat.aspx/getData',
         data: { tb: 'all', startTime: null, endTime: null, seriesNames: ['PH', 'COD', 'NH3N', 'TP', 'TN', 'datetimee', 'PH1', 'COD1', 'NH3N1', 'TP1', 'TN1', 'LL','LL1']},
         method:"POST",
         header: {
@@ -26,7 +30,6 @@ Page({
           that.setData({
             newsList: JSON.parse(res.data.d) 
           })
-          console.log(res.data.d)
         }
       })
     },60000)
@@ -35,7 +38,7 @@ Page({
   onShow:function(){
     var that = this
     wx.request({
-      url: 'https://localhost:44373/web/forWeChat.aspx/getData',
+      url: 'https://yuanshengqi.top/forWeChat.aspx/getData',
       data: { tb: 'all', startTime: null, endTime: null, seriesNames: ['PH', 'COD', 'NH3N', 'TP', 'TN', 'datetimee', 'LL',] },//'PH1', 'COD1', 'NH3N1', 'TP1', 'TN1', 'LL', 'LL1'
       method: "POST",
       header: {

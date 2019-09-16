@@ -18,8 +18,8 @@ D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Antlr3.Runtime.pd
 D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\zh-Hans\System.Web.Optimization.resources.dll
 D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll
-D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.csprojAssemblyReference.cache
-D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.csproj.CoreCompileInputs.cache
-D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.csproj.CopyComplete
-D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.dll
-D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.pdb
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Release\serverForReadSQL.csproj.CoreCompileInputs.cache
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Release\serverForReadSQL.csproj.CopyComplete
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Release\serverForReadSQL.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Release\serverForReadSQL.pdb
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Release\serverForReadSQL.csprojAssemblyReference.cache
