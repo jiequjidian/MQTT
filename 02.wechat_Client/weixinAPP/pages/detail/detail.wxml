@@ -1,34 +1,27 @@
-<!--index.wxml-->
 <view class="warp">
-  <view class="title">{{info.title}}</view>
-  
-  
-
-  <view class="page">  
-    <view class="picker_group">  
-      <picker mode="date" value="{{stime_d}}"  end="{{etime_d}}" bindchange="bindDateChange">  
-        <view class="picker">  
+    <view class="title">{{info.title}}</view>
+    <view class="page">
+        <view class="picker_group">
+            <picker bindchange="bindDateChange" end="{{etimeL}}" mode="date" value="{{stime_d}}">
+                <view class="picker">  
           {{stime_d}}  
-        </view>  
-      </picker>  
+        </view>
+            </picker>  
       至  
-      <picker mode="date" value="{{etime_d}}" start="{{stime_d}}" end="2200-01-01" bindchange="bindDateChange2">  
-        <view class="picker">  
+      <picker bindchange="bindDateChange2" mode="date" start="{{stimeL}}" value="{{etime_d}}">
+                <view class="picker">  
           {{etime_d}}  
-        </view>  
-      </picker>        
-    </view>  
-  </view>  
-
-
-  <view class="picker_series">
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker">
+        </view>
+            </picker>
+        </view>
+    </view>
+    <view class="picker_series">
+        <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+            <view class="picker">
       当前曲线：{{array[index]}}
     </view>
-  </picker>
-</view>
-  <ec-canvas id="mychart" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
-  <!--<view class="img"><image src="{{info.img}}" class="in-img"></image></view>-->
-  <view class="content">{{info.content}}</view>
+        </picker>
+    </view >
+    <ec-canvas canvasId="mychart-line" ec="{{ec}}" id="mychart" ></ec-canvas>
+    <view class="content">{{info.content}}</view>
 </view>

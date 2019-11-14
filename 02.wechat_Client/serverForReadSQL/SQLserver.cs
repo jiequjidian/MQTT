@@ -76,14 +76,18 @@ namespace serverForReadSQL
                 da.Fill(temp);
                 cmd.Dispose();
             }
+            //catch
+            //{
+            //    string aaa = "";
+            //}
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
-            finally
-            {
+            //finally
+            //{
 
-            }
+            //}
             return temp;
         }
 
@@ -98,21 +102,20 @@ namespace serverForReadSQL
         public static DataTable GetData(string tb, string start_time, string end_time)
         {
             DataTable tableReturn=null;//声明表变量 
+                                      
+            string sqlStr = "select  * from " + tb + " where datetimee between '"+ start_time+"' and '"+ end_time+"'";
             try
-            {                             
-
-                SqlParameter[] para = { new SqlParameter("@tb",tb), new SqlParameter("@Sdate", DateTime.Parse(start_time)), new SqlParameter("@Edate", DateTime.Parse(end_time)) };
-
-                tableReturn = GetDataSet("readeSQL", CommandType.StoredProcedure, para);
+            {
+                tableReturn = GetDataSet(sqlStr, CommandType.Text, null);
                 try
                 {
                     tableReturn.Columns.Remove("id");
                 }
                 catch { }
             }
-            catch 
+            catch
             {
-                
+
             }
             return tableReturn;
         }
@@ -134,11 +137,27 @@ namespace serverForReadSQL
             }
             return tableReturn;
         }
+        public static DataTable GetDataDischarge(string sqlDis,string start_time, string end_time)
+        {
+            DataTable tableReturn = null;//声明表变量 
+            try
+            {
 
-        public static DataTable getLast(string tb,string[] sNames)
+                SqlParameter[] para = { new SqlParameter("@Sdate", DateTime.Parse(start_time)), new SqlParameter("@Edate", DateTime.Parse(end_time)) };
+
+                tableReturn = GetDataSet(sqlDis+"_dis", CommandType.StoredProcedure, para);
+            }
+            catch
+            {
+                string aaaa = "";
+            }
+            return tableReturn;
+        }
+
+        public static DataTable getLast(string tb)
         {
             DataTable tableReturn = new DataTable();
-            string sqlStr = "select top 1 * from test order by datetimee desc";
+            string sqlStr = "select top 1 * from "+tb+" order by datetimee desc";
             try
             {
                  tableReturn = GetDataSet(sqlStr, CommandType.Text, null);

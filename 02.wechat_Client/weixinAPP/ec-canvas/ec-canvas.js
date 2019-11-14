@@ -1,135 +1,93 @@
-import WxCanvas from './wx-canvas';
-import * as echarts from './echarts';
+function t(t) {
+    for (var e = 0; e < t.touches.length; ++e) {
+        var a = t.touches[e];
+        a.offsetX = a.x, a.offsetY = a.y;
+    }
+    return t;
+}
 
-let ctx;
+var e = function(t) {
+    return t && t.__esModule ? t : {
+        default: t
+    };
+}(require("./wx-canvas")), a = function(t) {
+    if (t && t.__esModule) return t;
+    var e = {};
+    if (null != t) for (var a in t) Object.prototype.hasOwnProperty.call(t, a) && (e[a] = t[a]);
+    return e.default = t, e;
+}(require("./echarts")), c = void 0;
 
 Component({
-  properties: {
-    canvasId: {
-      type: String,
-      value: 'ec-canvas'
-    },
-
-    ec: {
-      type: Object
-    }
-  },
-
-  data: {
-
-  },
-
-  ready: function () {
-    if (!this.data.ec) {
-      console.warn('组件需绑定 ec 变量，例：<ec-canvas id="mychart-dom-bar" '
-        + 'canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>');
-      return;
-    }
-
-    if (!this.data.ec.lazyLoad) {
-      this.init();
-    }
-  },
-
-  methods: {
-    init: function (callback) {
-      const version = wx.version.version.split('.').map(n => parseInt(n, 10));
-      const isValid = version[0] > 1 || (version[0] === 1 && version[1] > 9)
-        || (version[0] === 1 && version[1] === 9 && version[2] >= 91);
-      if (!isValid) {
-        console.error('微信基础库版本过低，需大于等于 1.9.91。'
-          + '参见：https://github.com/ecomfe/echarts-for-weixin'
-          + '#%E5%BE%AE%E4%BF%A1%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82');
-        return;
-      }
-
-      ctx = wx.createCanvasContext(this.data.canvasId, this);
-
-      const canvas = new WxCanvas(ctx, this.data.canvasId);
-
-      echarts.setCanvasCreator(() => {
-        return canvas;
-      });
-
-      var query = wx.createSelectorQuery().in(this);
-      query.select('.ec-canvas').boundingClientRect(res => {
-        if (typeof callback === 'function') {
-          this.chart = callback(canvas, res.width, res.height);
+    properties: {
+        canvasId: {
+            type: String,
+            value: "ec-canvas"
+        },
+        ec: {
+            type: Object
         }
-        else if (this.data.ec && typeof this.data.ec.onInit === 'function') {
-          this.chart = this.data.ec.onInit(canvas, res.width, res.height);
+    },
+    data: {},
+    ready: function() {
+        this.data.ec ? this.data.ec.lazyLoad || this.init() : console.warn('组件需绑定 ec 变量，例：<ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>');
+    },
+    methods: {
+        init: function(t) {
+            var n = this, r = wx.version.version.split(".").map(function(t) {
+                return parseInt(t, 10);
+            });
+            if (r[0] > 1 || 1 === r[0] && r[1] > 9 || 1 === r[0] && 9 === r[1] && r[2] >= 91) {
+                c = wx.createCanvasContext(this.data.canvasId, this);
+                var s = new e.default(c, this.data.canvasId);
+                a.setCanvasCreator(function() {
+                    return s;
+                }), wx.createSelectorQuery().in(this).select(".ec-canvas").boundingClientRect(function(e) {
+                    "function" == typeof t ? n.chart = t(s, e.width, e.height) : n.data.ec && "function" == typeof n.data.ec.onInit ? n.chart = n.data.ec.onInit(s, e.width, e.height) : n.triggerEvent("init", {
+                        canvas: s,
+                        width: e.width,
+                        height: e.height
+                    });
+                }).exec();
+            } else console.error("微信基础库版本过低，需大于等于 1.9.91。参见：https://github.com/ecomfe/echarts-for-weixin#%E5%BE%AE%E4%BF%A1%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82");
+        },
+        canvasToTempFilePath: function(t) {
+            var e = this;
+            t.canvasId || (t.canvasId = this.data.canvasId), c.draw(!0, function() {
+                wx.canvasToTempFilePath(t, e);
+            });
+        },
+        touchStart: function(e) {
+            if (this.chart && e.touches.length > 0) {
+                var a = e.touches[0], c = this.chart.getZr().handler;
+                c.dispatch("mousedown", {
+                    zrX: a.x,
+                    zrY: a.y
+                }), c.dispatch("mousemove", {
+                    zrX: a.x,
+                    zrY: a.y
+                }), c.processGesture(t(e), "start");
+            }
+        },
+        touchMove: function(e) {
+            if (this.chart && e.touches.length > 0) {
+                var a = e.touches[0], c = this.chart.getZr().handler;
+                c.dispatch("mousemove", {
+                    zrX: a.x,
+                    zrY: a.y
+                }), c.processGesture(t(e), "change");
+            }
+        },
+        touchEnd: function(e) {
+            if (this.chart) {
+                var a = e.changedTouches ? e.changedTouches[0] : {}, c = this.chart.getZr().handler;
+                c.dispatch("mouseup", {
+                    zrX: a.x,
+                    zrY: a.y
+                }), c.dispatch("click", {
+                    zrX: a.x,
+                    zrY: a.y
+                }), c.processGesture(t(e), "end");
+            }
         }
-        else {
-          this.triggerEvent('init', {
-            canvas: canvas,
-            width: res.width,
-            height: res.height
-          });
-        }
-      }).exec();
-    },
-
-    canvasToTempFilePath(opt) {
-      if (!opt.canvasId) {
-        opt.canvasId = this.data.canvasId;
-      }
-
-      ctx.draw(true, () => {
-        wx.canvasToTempFilePath(opt, this);
-      });
-    },
-
-    touchStart(e) {
-      if (this.chart && e.touches.length > 0) {
-        var touch = e.touches[0];
-        var handler = this.chart.getZr().handler;
-        handler.dispatch('mousedown', {
-          zrX: touch.x,
-          zrY: touch.y
-        });
-        handler.dispatch('mousemove', {
-          zrX: touch.x,
-          zrY: touch.y
-        });
-        handler.processGesture(wrapTouch(e), 'start');
-      }
-    },
-
-    touchMove(e) {
-      if (this.chart && e.touches.length > 0) {
-        var touch = e.touches[0];
-        var handler = this.chart.getZr().handler;
-        handler.dispatch('mousemove', {
-          zrX: touch.x,
-          zrY: touch.y
-        });
-        handler.processGesture(wrapTouch(e), 'change');
-      }
-    },
-
-    touchEnd(e) {
-      if (this.chart) {
-        const touch = e.changedTouches ? e.changedTouches[0] : {};
-        var handler = this.chart.getZr().handler;
-        handler.dispatch('mouseup', {
-          zrX: touch.x,
-          zrY: touch.y
-        });
-        handler.dispatch('click', {
-          zrX: touch.x,
-          zrY: touch.y
-        });
-        handler.processGesture(wrapTouch(e), 'end');
-      }
     }
-  }
 });
-
-function wrapTouch(event) {
-  for (let i = 0; i < event.touches.length; ++i) {
-    const touch = event.touches[i];
-    touch.offsetX = touch.x;
-    touch.offsetY = touch.y;
-  }
-  return event;
-}

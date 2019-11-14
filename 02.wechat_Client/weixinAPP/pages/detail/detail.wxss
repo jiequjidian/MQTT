@@ -60,7 +60,7 @@ text-indent: 2em;
   font-size: 32rpx;
   color: #64bff1;
   height: 55rpx;
-  width: 260rpx;
+  width: 500rpx;
   line-height: 55rpx;
   margin: 0 2%;
   padding: 0 2%;

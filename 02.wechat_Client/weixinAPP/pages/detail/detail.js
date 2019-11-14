@@ -1,240 +1,254 @@
 
+
 import * as echarts from '../../ec-canvas/echarts';
 var util = require('../../utils/util.js');
 
 const app = getApp()
 
-var index=null;
+var index = null;
 
-//var Chart=null;
-var seriesName=null;
-var xTime = [];
-var tbName=null;
-var sTime=null;
+var seriesName = null;
+var xTime = null;
+var tbName = null;
+var lUnit=null;
+var sTime = null;
 var eTime = null;
 
 var dataList = null;
-
-
-
+var l = [];
 
 Page({
-  data: { 
-    stime_d: (util.endFormatDate(new Date(), 3)),//默认起始时间  
-    etime_d: (util.endFormatDate(new Date(), 0)),//默认结束时间 
-    array:['进水','出水','流量'],
-    index:0,
-    ec: {
-      lazyLoad: true // 延迟加载
-    },
-
-    info: {
-      id: 1,
-      //title: "历史曲线",
-      img: "../../images/1.png",
-      cTime: '2018-12-12 00:00:00',
-      //content: "这是关于园区泵站趋势测试"
-    }
-
-  },
-
-  // 时间段选择  
-  bindDateChange(e) {
-   // let that = this;
-    console.log(e.detail.value)
-    sTime=e.detail.value;
-   // this.stime_d = e.detail.value;
-    this.setData({
-      stime_d: e.detail.value
-    })
-    this.getData();
-  },
-  bindDateChange2(e) {
-    // let that = this;
-    eTime=e.detail.value; 
-    this.setData({
-      etime_d: e.detail.value
-    })   
-    this.getData();
-  },
-
-  //事件处理函数
-
-  bindPickerChange:function(e){
-    this.setData({
-      index:e.detail.value//事件触发后获取的值      
-    } );
-    switch (e.detail.value) {
-      case "0":
-      tbName="test";
-        seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"];
-        break;
-      case "1":
-        tbName = "test1";
-        seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"];
-        break;
-      case "2":
-        tbName = "two";       
-        seriesName = ['datetimee','进水流量','出水流量'];
-        break;
-      default:
-        break;
-    };
-
-    this.getData();//刷新曲线
-
-  },
-  onLoad: function (options) {
-    sTime= (util.endFormatDate(new Date(), 3));//默认起始时间  
-    eTime= (util.endFormatDate(new Date(), 0)),//默认结束时间 
-    tbName = options.tb;
-    switch (options.tb) {
-      case 'test':
-        this.index=0;
-        seriesName = ["datetimee","PH","NH3N","COD","TP","TN"];
-        break;
-      case 'test1':
-        this.index=1;
-        seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"];
-        break;
-      case 'two':
-        this.index=2;
-        seriesName = ["datetimee", "进水流量","出水流量"];  
-        break;
-      default:
-        break;
-    };
-    this.setData({
-      index: this.index,//事件触发后获取的值
-    });
-
-    this.echartsComponnet = this.selectComponent('#mychart');   
-    //setInterval(this.getData,60000)//每隔一分钟更新一次数据
-    setTimeout(this.getData, 1000);
-  },
-//   onShow:function(){
-// setTimeout(this.getData,1000);
-//   },
- 
-
-  getData:function(){
-    var sTimeS = sTime;
-   var eTimeS = eTime;
-   
-    wx.request({
-      url: 'https://yuanshengqi.top/forWeChat.aspx/getData', 
-      //url: "https://localhost:44373/forWeChat.aspx/getData",
-      method:'POST',
-      header: {
-        'Content-Type': 'application/json'
-        //'Content-Type':'application/x-www-form-urlencoded'
-      },
-
-      data: { tb: tbName, startTime: sTime, endTime: eTime, seriesNames: seriesName },
-      success(res) {
-        dataList = JSON.parse(res.data.d);   
-        for (var ti in dataList){
-          var nS = dataList[ti].datetimee;
-         xTime[ti]=nS;
-         // xTime.push(nS);//顺序是乱的
-        }    
-      }
-    })
-    setTimeout(this.initChart, 1000)  
-  },
-
-  initChart:function () {
-    this.echartsComponnet.init((canvas, width, height) => {
-      // 初始化图表
-     const Chart = echarts.init(canvas, null, {
-        width: width,
-        height: height
-      });
-       Chart.setOption(this.getOption());
-      //this.setOption(Chart);
-      // 注意这里一定要返回 chart 实例，否则会影响事件处理等
-      return Chart;
-    })
-  },
-
-
-  setOption: function (Chart) {
-    Chart.clear();  // 清除
-    Chart.setOption(this.getOption());  //获取新数据
-  },
-  getOption: function () {
-    // 指定图表的配置项和数据
-    var option = {
-      title: {
-        //text: '园区泵站',
-        left: 'center'
-      },
-      legend: {
-        top: 25,
-        bottom: 50,
-        left: 'center',
-       // data: seName,
-        z: 100
-      },
-
-      tooltip: {
-        show: true,
-        trigger: 'axis'
-      },
-      dataset: {
-        dimensions: seriesName,
-        source: dataList,
-      },
-      xAxis: {
-        type: 'category', 
-        data: xTime,
-        axisLabel: {
-          show: true,
-          textStyle: {
-            //color: '#c3dbff',  //更改坐标轴文字颜色
-            fontSize: 14      //更改坐标轴文字大小
-          }
+    data: {
+        stime_d: util.endFormatDate(new Date(), 2),
+        etime_d: util.endFormatDate(new Date(), -1),
+        stimeL: util.endFormatDate(new Date(), 1),
+        etimeL: util.endFormatDate(new Date(), 0),
+      array: ["液位(m)/流量(m³/h)", "进水水质(mg/L)", "出水水质(mg/L)", "日进水流量(m³)","一期MLSS(mg/L)", "一期DO(mg/L)", "二期MLSS/DO(mg/L)" ],
+        index: 0,
+        ec: {
+            lazyLoad: !0
         },
-        //type: 'time',
-        // data: ['2019/09/08 10:18:23', '2019/09/08 11:17:04','2019/09/08 12:47:05'],
-        // axisLabel:{rotate:-45},
-        boundaryGap: false,
-      },
-      yAxis: {
-        x: 'center',
-        type: 'value',
-        axisLabel: {
-          show: true,
-          textStyle: {
-            //color: '#c3dbff',  //更改坐标轴文字颜色
-            fontSize: 14      //更改坐标轴文字大小
-          }
-        },
-       
-        splitLine: {
-          lineStyle: {
-            type: 'dashed'
-          }
+        info: {
+            id: 1,
+            img: "../../images/1.png",
+            cTime: "2018-12-12 00:00:00"
         }
-      },
-      series: [{
-        type: 'line',
-        smooth: true,
-      }, {
-        type: 'line',
-        smooth: true,
-      }, {
-        type: 'line',
-        smooth: true,
-      }, {
-        type: 'line',
-        smooth: true,
-        }, {
-          type: 'line',
-          smooth: true,
-        }]
-    };
-    return option;
-  },
-  
-})
+    },
+    bindDateChange: function(e) {
+        console.log(e.detail.value), sTime = e.detail.value, 
+        this.setData({
+            stime_d: e.detail.value,
+          etime_d: util.endFormatDate(new Date(e.detail.value), -3)
+        }), 
+        this.setData({
+            stimeL: util.endFormatDate(new Date(e.detail.value), -1)
+        }), setTimeout(this.getData, 1e3);
+    },
+    bindDateChange2: function(e) {
+        eTime = e.detail.value, 
+        this.setData({
+          stime_d: util.endFormatDate(new Date(e.detail.value), 3),
+            etime_d: e.detail.value
+        }), this.setData({
+            etimeL: util.endFormatDate(new Date(e.detail.value), 1)
+        }), this.getData();
+    },
+    bindPickerChange: function(e) {
+        switch (this.setData({
+            index: e.detail.value
+        }), e.detail.value) {
+          case "0":
+            tbName = "YW", seriesName = ["datetimee", "进水流量", "出水流量", "进水液位"], lUnit = ["", "(m³/h)", "(m³/h)", "(m)"];
+            break;
+
+          case "1":
+            tbName = "JS", seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"], lUnit = ["", "", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+            break;
+
+          case "2":
+            tbName = "CS", seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"], lUnit = ["", "", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+
+          case "3":
+            tbName = "LLday", seriesName = ["datetimee", "一期日进水", "二期日进水", "日进水流量", "日出水流量"], lUnit = ["", "(m³)", "(m³)", "(m³)", "(m³)"];
+
+          case "4":
+            tbName = "YQMLSS", seriesName = ["datetimee", "MLSS1101F", "MLSS1201F", "MLSS1301F", "MLSS1401F"], lUnit = ["", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+            break;
+
+          case "5":
+            tbName = "YQDO", seriesName = ["datetimee", "DO1101F", "DO1102F", "DO1201F", "DO1202F", "DO1301F", "DO1302F", "DO1401F", "DO1402F"], lUnit = ["", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+            break;
+
+          case "6":
+            tbName = "EQ", seriesName = ["datetimee", "MLSS1100S", "MLSS1200S", "MLSS1101S", "MLSS1201S", "DO1101S", "DO1200S", "DO1201S", "DO1100S"], lUnit = ["", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+        }
+        this.getData();
+    },
+    onLoad: function(e) {
+        switch (this.echartsComponnet = this.selectComponent("#mychart"), sTime = util.endFormatDate(new Date(), 2), 
+        eTime = util.endFormatDate(new Date(), -1), tbName = e.tb, e.tb) {
+          case "YW":
+            this.index = 0, seriesName = ["datetimee", "进水流量", "出水流量", "进水液位"], lUnit = ["","(m³/h)","(m³/h)","(m)"];
+            break;
+
+          case "JS":
+            this.index = 1, seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"], lUnit = ["", "", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+            break;
+
+          case "CS":
+            this.index = 2, seriesName = ["datetimee", "PH", "NH3N", "COD", "TP", "TN"], lUnit = ["", "", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+            break;
+          case "LLday":
+            this.index = 3, seriesName = ["datetimee", "一期日进水", "二期日进水", "日进水流量", "日出水流量"], lUnit = ["", "(m³)", "(m³)", "(m³)", "(m³)"];
+            break;
+          case "YQMLSS":
+            this.index = 4, seriesName = ["datetimee", "MLSS1101F", "MLSS1201F", "MLSS1301F", "MLSS1401F"], lUnit = ["", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+            break;
+
+          case "YQDO":
+            this.index = 5, seriesName = ["datetimee", "DO1101F", "DO1102F", "DO1201F", "DO1202F", "DO1301F", "DO1302F", "DO1401F", "DO1402F"], lUnit = ["", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+            break;
+
+          case "EQ":
+            this.index = 6, seriesName = ["datetimee", "MLSS1100S", "MLSS1200S", "MLSS1101S", "MLSS1201S", "DO1101S", "DO1200S", "DO1201S", "DO1100S"], lUnit = ["", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)", "(mg/L)"];
+        }
+        this.setData({
+            index: this.index
+        }), this.getData();
+    },
+    getData: function() {
+        var e = new Date(sTime), t = new Date(eTime);
+        parseInt(t.getTime() - e.getTime());
+        wx.request({
+           url: "https://yuanshengqi.top/forWeChat.aspx/getData",
+          //url: "https://localhost:44373/forWeChat.aspx/getData",
+            method: "POST",
+            header: {
+                "Content-Type": "application/json"
+            },
+            data: {
+              tb: tbName,
+                startTime: sTime,
+                endTime: eTime,
+                seriesNames: seriesName
+            },
+            success: function(res) {
+              if (res.data.d != null){
+               {
+                  dataList = JSON.parse(res.data.d);
+                  if (dataList.length != 0){
+                    var t = 0;
+                    xTime = [dataList[0].datetimee, dataList[1].datetimee];
+                    for (var a in dataList) {//删掉不在范围内的数据
+                      var n = dataList[a].datetimee.replace(/-/g, "/"), l = n.slice(5, n.length);
+                      Date.parse(n) < Date.parse(sTime) || Date.parse(n) > Date.parse(eTime) ? (dataList.splice(a, 1),
+                        xTime.splice(a, 1)) : (dataList[a].datetimee = l, xTime[a] = l), t = a;
+                    }
+                    xTime.slice(0, t), dataList.slice(0, t);
+                  }
+                  
+                }
+                
+              }
+              
+            }
+        }), setTimeout(this.initChart, 2e3);
+    },
+    initChart: function() {
+        var that = this;
+      this.echartsComponnet.init(function (canvas, width, height) {
+        var chart = echarts.init(canvas, null, {
+          width: width,
+          height: height
+            });
+            l = [];
+            for (var d = 0; d < seriesName.length - 1; d++) {
+                var D = {
+                    type: "line",
+                    smooth: !0
+                };
+                l.push(D);
+            }
+        return chart.setOption(that.getOption()), chart;
+        });
+    },
+    getOption: function() {
+      var serieNN=[]
+      for (let b in seriesName){
+        serieNN.push(seriesName[b] );
+      }
+        return {
+            title: {
+                left: "center"
+            },
+            legend: {//图例属性
+                top: 15,
+                bottom: 30,
+                left: "center",
+                z: 100
+            },
+            tooltip: {
+                show: !0,
+              trigger: "axis", 
+              axisPointer: {
+                type: 'cross'
+              },
+              // backgroundColor: 'rgba(245, 245, 245, 0.8)',
+              // borderWidth: 1,
+              // borderColor: '#cc1',
+              // textStyle: {
+              //   color: '#000'
+              // },
+              position: function (pos, params, el, elRect, size) {
+                var obj = { top: 45 };
+                obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 30;
+                return obj;
+              },
+            },
+          axisPointer: {
+            link: { xAxisIndex: 'all' },
+            label: {
+              backgroundColor: '#777'
+            }
+          },
+          grid:{
+            left:50,
+            top:50,
+          },
+            dataset: {
+              dimensions: serieNN,
+              source: dataList
+            },
+            xAxis: {
+                type: "category",
+                data: xTime,
+                axisLabel: {
+                    show: !0,
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+              axisPointer:{
+                show:!0,
+              },
+                boundaryGap: !1
+            },
+            yAxis: {
+                x: "center",
+                type: "value",
+                axisLabel: {
+                    show: !0,
+                    textStyle: {
+                        fontSize: 14
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        type: "dashed"
+                    }
+                }
+            },
+            series: l
+        };
+    }
+});

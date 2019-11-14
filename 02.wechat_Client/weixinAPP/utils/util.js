@@ -1,82 +1,29 @@
-function formatTime(date) {
-  var year = date.getFullYear()
-  var month = date.getMonth() + 1
-  var day = date.getDate()
-
-  var hour = date.getHours()
-  var minute = date.getMinutes()
-  var second = date.getSeconds()
-
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+function e(e) {
+    return (e = e.toString())[1] ? e : "0" + e;
 }
-
-function formatNumber(n) {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
-
-const endFormatTime = (date, x) => { //x为小时数
-  var year = date.getFullYear()
-  var month = date.getMonth() + 1
-  var day = date.getDate()
-  var hour = date.getHours() - x
-  var minute = date.getMinutes()
-  var second = date.getSeconds()
-while(true){
-  if (hour >= 24) {
-    hour -= 24;
-    day += 1;
-  }
-  else{
-    if (hour < 0) {
-      hour += 24;
-      day -= 1;
-    }else{
-      break;
-    }    
-  }
-}
-  
-  
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const endFormatDate=(date,x)=>{ //x为天数
-  var year=date.getFullYear();
-  var month=date.getMonth()+1;
-  var day=date.getDate()-x;
-  while (true) {
-    if (day >= 30) {
-      hour -= 30;
-      month += 1;
-    }
-    else {
-      if (day < 0) {
-        hour += 30;
-        month -= 1;
-      } else {
-        break;
-      }
-    }
-  }
-  return [year,month,day].map(formatNumber).join('/')
-}
-
-const formatDate = (date) => { //x为天数
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
- 
-  return [year, month, day].map(formatNumber).join('/')
-}
-
 
 module.exports = {
-  formatTime: formatTime,
-  endFormatTime: endFormatTime,
-  endFormatDate: endFormatDate,
-  formatDate: formatDate,
-}
+    formatTime: function(t) {
+        var n = t.getFullYear(), r = t.getMonth() + 1, o = t.getDate(), a = t.getHours(), i = t.getMinutes(), u = t.getSeconds();
+        return [ n, r, o ].map(e).join("/") + " " + [ a, i, u ].map(e).join(":");
+    },
+    endFormatTime: function(t, n) {
+        for (var r = t.getFullYear(), o = t.getMonth() + 1, a = t.getDate(), i = t.getHours() - n, u = t.getMinutes(), g = t.getSeconds(); ;) if (i >= 24) i -= 24, 
+        a += 1; else {
+            if (!(i < 0)) break;
+            i += 24, a -= 1;
+        }
+        return [ r, o, a ].map(e).join("/") + " " + [ i, u, g ].map(e).join(":");
+    },
+    endFormatDate: function(t, n) {
+        for (var r = t.getFullYear(), o = t.getMonth() + 1, a = t.getDate() - n; ;) if (a >= 30) a -= 28, 
+        o += 1; else {
+            if (!(a < 0)) break;
+            a += 28, o -= 1;
+        }
+        return [ r, o, a ].map(e).join("/");
+    },
+    formatDate: function(t) {
+        return [ t.getFullYear(), t.getMonth() + 1, t.getDate() ].map(e).join("/");
+    }
+};

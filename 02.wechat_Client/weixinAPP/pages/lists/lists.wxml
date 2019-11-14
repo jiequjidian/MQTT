@@ -1,56 +1,93 @@
 <!--lists.wxml-->
 <view class="warp">
-  <!--文章列表模板-->
-  <template name="lists"> 
- 
-  <navigator url="../../pages/detail/detail?id={{id}}&tb=test" hover-class="navigator-hover" >
+
+<navigator url="../../pages/detail/detail?id={{id}}&tb=YW" hover-class="navigator-hover" >
       <view class="imgs">
-        <image src="/images/pi.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+        <image src="/images/list.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
       </view>
-      <view class="infos">
-        <view class="title">进水水质</view>
-        <view class="neirong">PH:{{PH}}</view>
-        <view class="neirong">COD:{{COD}}</view>
-        <view class="neirong">NH3N:{{NH3N}}</view>
-        <view class="neirong">TP:{{TP}}</view>
-        <view class="neirong">TN:{{TN}}</view>
-        <view class="date">{{datetimee}}</view>
+      <view style="height:200rpx">
+      <view class="title" >液位</view>
+      <view wx:for="{{listData_yw}}" >
+        <view class="neirong" style="color:{{item.color}}">{{item.name}}:{{item.value}} {{item.unit}}             </view>     
+      </view>
+      </view>
+  </navigator>
+  
+     
+   
+  <navigator url="../../pages/detail/detail?id={{id}}&tb=JS" hover-class="navigator-hover">
+      <view class="imgs"style="height:300rpx">
+        <image src="/images/list.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+      </view>  
+       <view style="height:300rpx">    
+      <view class="title">进水水质</view>
+      <view wx:for="{{listData_JS}}" >
+        <view class="neirong" style="color:{{item.color}}">{{item.name}}:{{item.value}} {{item.unit}}             </view>     
+      </view>
       </view>
     </navigator>
+
+    
    
-  <navigator url="../../pages/detail/detail?id={{id}}&tb=test1" hover-class="navigator-hover">
-      <view class="imgs">
-        <image src="/images/pi.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+     <navigator url="../../pages/detail/detail?id={{id}}&tb=CS" hover-class="navigator-hover">
+      <view class="imgs"style="height:300rpx">
+        <image src="/images/list.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
       </view>
-      <view class="infos">
+      <view style="height:300rpx">
         <view class="title">出水水质</view>
-        <view class="neirong">PH:{{PH1}}</view>
-        <view class="neirong">COD:{{COD1}}</view>
-        <view class="neirong">NH3N:{{NH3N1}}</view>
-        <view class="neirong">TP:{{TP1}}</view>
-        <view class="neirong">TN:{{TN1}}</view>
-        <view class="date">{{datetimee}}</view>
+        <view wx:for="{{listData_CS}}" >
+        <view class="neirong" style="color:{{item.color}}">{{item.name}}:{{item.value}} {{item.unit}}             </view>     
       </view>
-    </navigator>
-   
-     <navigator url="../../pages/detail/detail?id={{id}}&tb=two" hover-class="navigator-hover">
-      <view class="imgs">
-        <image src="/images/pi.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
-      </view>
-      <view class="infos">
-        <view class="title">流量</view>
-        <view class="neirong">进水:{{LL}}</view>
-        <view class="neirong">出水:{{LL1}}</view>
       </view>
     </navigator>
     
+
+    <navigator url="../../pages/detail/detail?id={{id}}&tb=LLday" hover-class="navigator-hover">
+      <view class="imgs"style="height:300rpx">
+        <image src="/images/list.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+      </view>  
+       <view style="height:300rpx">    
+      <view class="title">日累计流量</view>
+      <view wx:for="{{listData_LLday}}" >
+        <view class="neirong" style="color:{{item.color}}">{{item.name}}:{{item.value}} {{item.unit}}             </view>     
+      </view>
+      </view>
+    </navigator>
    
-  </template>
+   <navigator url="../../pages/detail/detail?id={{id}}&tb=YQMLSS" hover-class="navigator-hover">
+      <view class="imgs"style="height:280rpx">
+        <image src="/images/list.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+      </view>
+      <view style="height:280rpx">
+        <view class="title">一期MLSS</view>
+        <view wx:for="{{listData_YQMLSS}}" >
+        <view class="neirong" style="color:{{item.color}}">{{item.name}}:{{item.value}} {{item.unit}}             </view>     
+      </view>
+      </view>
+    </navigator>
 
-  <!--文章列表模板结束-->
-  <!--循环输出列表-->
-  <view wx:for="{{newsList}}" wx:for-item="news" class="list">
-    <template is="lists" data="{{...news}}" />
+     <navigator url="../../pages/detail/detail?id={{id}}&tb=YQDO" hover-class="navigator-hover">
+      <view class="imgs"style="height:420rpx">
+        <image src="/images/list.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+      </view>
+     <view style="height:420rpx">
+        <view class="title">一期DO</view>
+        <view wx:for="{{listData_YQDO}}" >
+        <view class="neirong" style="color:{{item.color}}">{{item.name}}:{{item.value}} {{item.unit}}             </view>     
+      </view>
+      </view>
+    </navigator>
 
-  </view>
+     <navigator url="../../pages/detail/detail?id={{id}}&tb=EQ" hover-class="navigator-hover">
+      <view class="imgs"style="height:400rpx">
+        <image src="/images/list.png" class="in-img" background-size="cover" modal="scaleToFill"></image>
+      </view>
+     <view style="height:400rpx">
+        <view class="title">二期MLSS/DO</view>
+        <view wx:for="{{listData_EQ}}" >
+        <view class="neirong" style="color:{{item.color}}">{{item.name}}:{{item.value}} {{item.unit}}             </view>     
+      </view>
+      </view>
+    </navigator>
+  
 </view>
