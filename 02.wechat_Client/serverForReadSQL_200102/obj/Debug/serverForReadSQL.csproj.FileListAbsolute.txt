@@ -1,0 +1,165 @@
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\serverForReadSQL.dll.config
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\serverForReadSQL.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\serverForReadSQL.pdb
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Antlr3.Runtime.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\AspNet.ScriptManager.bootstrap.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\AspNet.ScriptManager.jQuery.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.ScriptManager.WebForms.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.Web.Infrastructure.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Newtonsoft.Json.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\System.Web.Optimization.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\WebGrease.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\System.Web.Optimization.xml
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Newtonsoft.Json.xml
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Antlr3.Runtime.pdb
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.csproj.CopyComplete
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.dll
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.pdb
+D:\01,githubRoom\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.csprojAssemblyReference.cache
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\serverForReadSQL.dll.config
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\serverForReadSQL.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\serverForReadSQL.pdb
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Antlr3.Runtime.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\AspNet.ScriptManager.bootstrap.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\AspNet.ScriptManager.jQuery.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.ScriptManager.WebForms.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.Web.Infrastructure.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Newtonsoft.Json.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\System.Web.Optimization.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\WebGrease.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\System.Web.Optimization.xml
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Newtonsoft.Json.xml
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Antlr3.Runtime.pdb
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.csprojAssemblyReference.cache
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.csproj.CopyComplete
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL\obj\Debug\serverForReadSQL.pdb
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\serverForReadSQL.dll.config
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\serverForReadSQL.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\serverForReadSQL.pdb
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Antlr3.Runtime.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\AspNet.ScriptManager.bootstrap.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\AspNet.ScriptManager.jQuery.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Microsoft.ScriptManager.WebForms.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Microsoft.Web.Infrastructure.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Newtonsoft.Json.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\System.Web.Optimization.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\WebGrease.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\System.Web.Optimization.xml
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Newtonsoft.Json.xml
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Antlr3.Runtime.pdb
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\obj\Debug\serverForReadSQL.csproj.CoreCompileInputs.cache
+D:\凯秘克（资料）\网站后台\serverForReadSQL\obj\Debug\serverForReadSQL.csproj.CopyComplete
+D:\凯秘克（资料）\网站后台\serverForReadSQL\obj\Debug\serverForReadSQL.dll
+D:\凯秘克（资料）\网站后台\serverForReadSQL\obj\Debug\serverForReadSQL.pdb
+D:\凯秘克（资料）\网站后台\serverForReadSQL\obj\Debug\serverForReadSQL.csprojAssemblyReference.cache
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\serverForReadSQL.dll.config
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\serverForReadSQL.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\serverForReadSQL.pdb
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Antlr3.Runtime.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\AspNet.ScriptManager.bootstrap.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\AspNet.ScriptManager.jQuery.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Microsoft.ScriptManager.WebForms.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Microsoft.Web.Infrastructure.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Newtonsoft.Json.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\System.Web.Optimization.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\WebGrease.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\System.Web.Optimization.xml
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Newtonsoft.Json.xml
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Antlr3.Runtime.pdb
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\obj\Debug\serverForReadSQL.csprojAssemblyReference.cache
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\obj\Debug\serverForReadSQL.csproj.CopyComplete
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\obj\Debug\serverForReadSQL.dll
+D:\03.Download\WeChat Files\YMwithU\FileStorage\File\2019-11\serverForReadSQL\obj\Debug\serverForReadSQL.pdb
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\serverForReadSQL.dll.config
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\serverForReadSQL.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\serverForReadSQL.pdb
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Antlr3.Runtime.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\AspNet.ScriptManager.bootstrap.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\AspNet.ScriptManager.jQuery.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Microsoft.ScriptManager.WebForms.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Microsoft.Web.Infrastructure.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Newtonsoft.Json.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\System.Web.Optimization.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\WebGrease.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\System.Web.Optimization.xml
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Newtonsoft.Json.xml
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Antlr3.Runtime.pdb
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\obj\Debug\serverForReadSQL.csprojAssemblyReference.cache
+D:\08.item\04.杨帅交接\serverForReadSQL\obj\Debug\serverForReadSQL.csproj.CopyComplete
+D:\08.item\04.杨帅交接\serverForReadSQL\obj\Debug\serverForReadSQL.dll
+D:\08.item\04.杨帅交接\serverForReadSQL\obj\Debug\serverForReadSQL.pdb
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\serverForReadSQL.dll.config
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\serverForReadSQL.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\serverForReadSQL.pdb
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Antlr3.Runtime.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Microsoft.ScriptManager.WebForms.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Microsoft.Web.Infrastructure.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Newtonsoft.Json.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\System.Web.Optimization.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\WebGrease.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\System.Web.Optimization.xml
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Newtonsoft.Json.xml
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Antlr3.Runtime.pdb
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\obj\Debug\serverForReadSQL.csprojAssemblyReference.cache
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\obj\Debug\serverForReadSQL.csproj.CopyComplete
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\obj\Debug\serverForReadSQL.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118\obj\Debug\serverForReadSQL.pdb
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\serverForReadSQL.dll.config
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\serverForReadSQL.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\serverForReadSQL.pdb
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Antlr3.Runtime.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Microsoft.ScriptManager.WebForms.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Microsoft.Web.Infrastructure.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Newtonsoft.Json.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\System.Web.Optimization.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\WebGrease.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\System.Web.Optimization.xml
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Newtonsoft.Json.xml
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Antlr3.Runtime.pdb
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\obj\Debug\serverForReadSQL.csprojAssemblyReference.cache
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\obj\Debug\serverForReadSQL.csproj.CopyComplete
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\obj\Debug\serverForReadSQL.dll
+D:\08.item\01.MQTT\02.wechat_Client\serverForReadSQL_191118 - 副本\obj\Debug\serverForReadSQL.pdb
