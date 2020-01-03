@@ -65,14 +65,19 @@ Page({
       { id: 8, name: 'datetimee', value: '', unit: '', color: 'black' },
     ]
   },
-  //事件处理函数
+
+  //如果点击（关于我们）则跳转到logs界面
   bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
+
+  //页面加载完毕后执行的程序
   onLoad: function () {
     var that = this
+
+    //定义各部分包含的项及各项的属性
     var list_YW1 = [
       { id: 0, name: '进水流量', value: '', unit: 'm³/h', color: 'black' },
       { id: 1, name: '出水流量', value: '', unit: 'm³/h', color: 'black' },
@@ -135,8 +140,8 @@ Page({
 
     setTimeout(function () {
       wx.request({
-       url: 'https://localhost:44373/forWeChat.aspx/getData',
-        //url: 'https://yuanshengqi.top/forWeChat.aspx/getData',
+      // url: 'https://localhost:44373/forWeChat.aspx/getData',
+        url: 'https://yuanshengqi.top/forWeChat.aspx/getData',
         data: { tb: 'all', startTime: null, endTime: null, seriesNames: ['PH', 'COD', 'NH3N', 'TP', 'TN', 'LL', 'datetimee', 'JSLL_ALL', 'JSLL_YQ', 'JSLL_EQ', 'CSLL_ALL', 'warm', 'MLSS', 'DO']},
         method: "POST",
         header: {
@@ -145,6 +150,7 @@ Page({
 
         success(res) {
 
+          //定义各部分中包含哪些项
             var listFake = JSON.parse(res.data.d)
             var list_YW = ['JS_LL', 'CS_LL', 'JS_YW', 'datetimee']
             var list_JS = ['PH1', 'COD1', 'NH3N1', 'TP1', 'TN1', 'datetimee1']
@@ -154,6 +160,7 @@ Page({
             var list_YQDO = ['DO1101F3', 'DO1102F3', 'DO1201F3', 'DO1202F3', 'DO1301F3', 'DO1302F3', 'DO1401F3', 'DO1402F3', 'datetimee3']
             var list_EQ = ['MLSS1100S4', 'MLSS1101S4', 'MLSS1200S4', 'MLSS1201S4', 'DO1100S4', 'DO1101S4', 'DO1200S4', 'DO1201S4', 'datetimee4']
 
+            //将接收到的数据转存到另一容器（好像没什么意义，不过不能乱动）
             var listFree = []
             for (let i in listFake[0]) {
               listFree.push(i)
@@ -161,7 +168,7 @@ Page({
             }
 
 
-
+            //遍历数组，将属于各个部分的数据挑选出来，整理好
             listFree.forEach(function (item, index) {
 
               var w = item
@@ -203,6 +210,7 @@ Page({
               }
             })
 
+            //将报警数据标红
             if (listFake[0].warning1 != null) {
               var warLen1 = listFake[0].warning1.length
               if (warLen1 > 1) {
@@ -233,6 +241,7 @@ Page({
               }
             }
 
+            //将整理好的数据显示到界面
             that.setData({
               listData_yw: list_YW1,
               listData_JS: list_JS1,
@@ -241,9 +250,7 @@ Page({
               listData_YQMLSS: list_YQMLSS1,
               listData_YQDO: list_YQDO1,
               listData_EQ: list_EQ1,
-            })
-
-          
+            })          
 
         }
       })
@@ -314,8 +321,8 @@ Page({
 
     setInterval(function () {
       wx.request({
-       url: 'https://localhost:44373/forWeChat.aspx/getData',
-        //url: 'https://yuanshengqi.top/forWeChat.aspx/getData',
+       //url: 'https://localhost:44373/forWeChat.aspx/getData',
+        url: 'https://yuanshengqi.top/forWeChat.aspx/getData',
         data: { tb: 'all', startTime: null, endTime: null, seriesNames: ['PH', 'COD', 'NH3N', 'TP', 'TN', 'LL', 'datetimee', 'JSLL_ALL', 'JSLL_YQ', 'JSLL_EQ', 'CSLL_ALL', 'warm', 'MLSS', 'DO']},
         method: "POST",
         header: {
@@ -323,7 +330,6 @@ Page({
         },
 
         success(res) {
-
             var listFake = JSON.parse(res.data.d)
             var list_YW = ['JS_LL', 'CS_LL', 'JS_YW', 'datetimee']
             var list_JS = ['PH1', 'COD1', 'NH3N1', 'TP1', 'TN1', 'datetimee1']
@@ -339,8 +345,7 @@ Page({
               var ccc = listFake[0][i]
             }
 
-
-
+            //将接收到的乱序的消息分类整理好
             listFree.forEach(function (item, index) {
 
               var w = item
@@ -381,7 +386,9 @@ Page({
                 }
               }
             })
+            
 
+            //将报警数据标红
             if (listFake[0].warning1 != null) {
               var warLen1 = listFake[0].warning1.length
               if (warLen1 > 1) {
@@ -412,6 +419,7 @@ Page({
               }
             }
 
+            //将整理好的数据显示到页面上
             that.setData({
               listData_yw: list_YW1,
               listData_JS: list_JS1,

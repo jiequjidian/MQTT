@@ -15,6 +15,8 @@ module.exports = {
         }
         return [ r, o, a ].map(e).join("/") + " " + [ i, u, g ].map(e).join(":");
     },
+
+    //日期t-n（day）
   endFormatDate: function (t, n) {
     for (var r = t.getFullYear(), o = t.getMonth() + 1, a = t.getDate() - n; ;){
       if (a >= 30) {
