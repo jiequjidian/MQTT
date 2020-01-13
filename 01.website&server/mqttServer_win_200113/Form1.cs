@@ -161,6 +161,8 @@ namespace mqttServer_win
             }*/
         }
 
+       
+
 
         private static void writeToSql(string dataStr)
         {
@@ -208,16 +210,18 @@ namespace mqttServer_win
 
             for (int i = 0; i < dataString.Data.Count; i++)
             {
+                string tableName = null;
                 string unitName = dataString.Data[i].name;
                 string unitValue = dataString.Data[i].value;
                 switch (unitName.Substring(0, 2))
                 {
                     
                     case "JS":  //进水数据，进水流量和进水液位数据存入液位表，其他数据存入进水表
+                        tableName = "JS";
                         if (unitName == "JS_LL")
                         {
                             fielCoYW += unitName+ ",";
-                            valueColYW += decimalFormat((Convert.ToDouble(unitValue)*3.6).ToString()) + ",";
+                            valueColYW += ((Convert.ToDouble(changeForSql(tableName,unitName, unitValue) )*3.6).ToString()) + ",";
                         }
 
                         //if (unitName=="JS_LL")
@@ -228,23 +232,25 @@ namespace mqttServer_win
                         if ( unitName == "JS_YW")
                         {
                             fielCoYW += unitName + ",";
-                            valueColYW += decimalFormat(unitValue) + ",";
+                            valueColYW += changeForSql(tableName,unitName, unitValue) + ",";
                         }
                         if (unitName.Substring(0, 3)=="JSL")//日累计流量表中的数据
                         {
                             fielCoLLday += unitName + ",";
-                            valueColLLday += decimalFormat(unitValue) + ",";
+                            valueColLLday += changeForSql(tableName,unitName, unitValue) + ",";
                         }
                         else {
-                            fielCoJS += unitName.Substring(3, unitName.Length - 3) + ",";
-                            valueColJS += decimalFormat(unitValue) + ",";
+                            string nameStr= unitName.Substring(3, unitName.Length - 3);
+                            fielCoJS += nameStr + ",";
+                            valueColJS += changeForSql(tableName, nameStr, unitValue) + ",";
                         }
 
                         for (int k = 0; k < tb_JS.Length; k++)
                             {
-                                if (unitName.Substring(3, unitName.Length - 3) == tb_JS[k])
+                            string nameStr1 = unitName.Substring(3, unitName.Length - 3);
+                            if (nameStr1 == tb_JS[k])
                                 {
-                                    string str = decimalFormat(unitValue);
+                                    string str = changeForSql(tableName, nameStr1, unitValue);
                                     double iii = Convert.ToDouble(str);
                                 double iCompare_H =(warmH_JS[k]);
                                 double iCompare_L =(warmL_JS[k]);
@@ -258,29 +264,31 @@ namespace mqttServer_win
                         break;
                     case "CS"://出水数据，存入出水表 
 
-                        
+                        tableName = "CS";
 
                         if (unitName == "CS_LL")//出水流量直接放入液位表中
                         {
                             fielCoYW += unitName + ",";
-                            valueColYW += decimalFormat((Convert.ToDouble(unitValue)*3.6).ToString()) + ",";
+                            valueColYW += (Convert.ToDouble(changeForSql(tableName,unitName, unitValue)) *3.6).ToString()+ ",";
                         }
                         if (unitName.Substring(0, 3) == "CSL")//日累计流量表中的数据
                         {
                             fielCoLLday += unitName + ",";
-                            valueColLLday += decimalFormat(unitValue) + ",";
+                            valueColLLday += changeForSql(tableName,unitName, unitValue) + ",";
                         }
                         else
                         {
-                            fielCoCS += unitName.Substring(3, unitName.Length - 3) + ",";
-                            valueColCS += decimalFormat(unitValue) + ",";
+                            string nameStr2 = unitName.Substring(3, unitName.Length - 3);
+                            fielCoCS += nameStr2 + ",";
+                            valueColCS += changeForSql(tableName, nameStr2, unitValue) + ",";
                         }
 
                         for (int k = 0; k < tb_CS.Length; k++)
                         {
-                            if (unitName.Substring(3, unitName.Length - 3) == tb_CS[k])
+                            string nameStr3 = unitName.Substring(3, unitName.Length - 3);
+                            if (nameStr3 == tb_CS[k])
                             {
-                                string str = decimalFormat(unitValue);
+                                string str = changeForSql(tableName, nameStr3, unitValue);
                                 double iii = Convert.ToDouble(str);
                                 double iCompare_H =warmH_CS[k];
                                 double iCompare_L = warmL_CS[k];
@@ -294,13 +302,17 @@ namespace mqttServer_win
                         }
                         break;
                     case "YQ"://反应池数据
-                        fielCoYQ += unitName.Substring(3, unitName.Length - 3) + ",";
-                        valueColYQ += decimalFormat(unitValue) + ",";                        
+                        tableName = "YQ";
+                        string nameStr4 = unitName.Substring(3, unitName.Length - 3);
+                        fielCoYQ += nameStr4 + ",";
+                        valueColYQ += changeForSql(tableName, nameStr4, unitValue) + ",";                        
                         
                         break;
                     case "EQ"://反应池数据
-                        fielCoEQ += unitName.Substring(3, unitName.Length - 3) + ",";
-                        valueColEQ += decimalFormat(unitValue) + ",";
+                        tableName = "EQ";
+                        string nameStr5 = unitName.Substring(3, unitName.Length - 3);
+                        fielCoEQ += nameStr5 + ",";
+                        valueColEQ += changeForSql(tableName, nameStr5, unitValue) + ",";
                         break;
                     default://有误的数据，不存入数据库
                         continue;
@@ -357,25 +369,125 @@ namespace mqttServer_win
             sqlStr = sqlStr_sonYW+ sqlStr_sonJS +sqlStr_sonCS+ sqlStr_sonLLday+ sqlStr_sonYQ + sqlStr_sonEQ;
 
             if (sqlStr!=null)
-            {
-                SQLdispose sQ = new SQLdispose();
-                sQ.ExecuteWithReturn(sqlStr);
+            {                
+                SQLdispose.ExecuteSql(sqlStr);
             }
             
 
 
         }
 
+        /// <summary>
+        /// 为字符段加单引号，且当字符串不是数字时将值赋0
+        /// </summary>
+        /// <param name="tableName">表名</param>
+        /// <param name="fielName">字段名</param>
+        /// <param name="strF"></param>
+        /// <returns></returns>
+        private static string changeForSql(string tableName,string fielName,string strF)
+        {
+            if (isNumberS(strF))
+            {
+                return decimalFormat(delT(strF));
+            }
+            else
+            {
+                string sqlStr = "select PH from CS where id in(select MAX(id)-1 from CS)";
+                return SQLdispose.GetSingle(sqlStr).ToString();
+            }
+        }
+
+
+
+
+
+        
+
+        /// <summary>
+        /// 用遍历的方法判断一个字符串是否为合法数字
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static bool isNumberS(string str)
+        {
+
+            str = delT(str);
+
+            //然后判断是否有且仅有一个小数点
+
+
+            int pointN = 0;
+            //遍历字符串中的字符
+            for (int i = 0; i < str.Length; i++)
+            {
+
+                //若小数点个数大于1，则不是合法数字
+                if (str[i] == '.')
+                {
+                    if (pointN >= 1)
+                    {
+                        return false;
+                    }
+                    pointN++;
+                }
+
+                //若字符不是小数点，则判断是否为数字（十进制数字，不包含罗马数字和分数等）
+                else
+                {
+                    if (Char.IsDigit(str[i]))
+                    {
+
+                    }
+                    else
+                    {
+                        //若有非法数字，则返回false
+                        return false;
+                    }
+                }
+            }
+
+
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// 保留小数点后两位
+        /// </summary>
+        /// <param name="decimalStr"></param>
+        /// <returns></returns>
         public static string decimalFormat(string decimalStr)
         {
             int sss = decimalStr.IndexOf('.');
-            if (decimalStr.IndexOf('.')!=-1)
+            if (decimalStr.IndexOf('.') != -1)
             {
-                decimalStr = decimalStr.Substring(0,decimalStr.IndexOf('.')+3);
+                decimalStr = decimalStr.Substring(0, decimalStr.IndexOf('.') + 3);
             }
             return decimalStr;
         }
-       
+
+        /// <summary>
+        /// 将字符串两端的单引号和双引号去掉
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string delT(string str)
+        {
+            //首先将字符串两端的合法的‘"’和‘'’去掉
+            if (str[0] == '\'' && str[str.Length - 1] == '\'')
+            {
+                str = str.Replace('\'', ' ').Trim();
+                // str = str.Remove('\'');
+            }
+            if (str[0] == '\"' && str[str.Length - 1] == '\"')
+            {
+                str = str.Replace('\"', ' ').Trim();
+            }
+            return str;
+        }
+
+
+
         private void Timer1_Tick(object sender, EventArgs e)
         {
             if (tag1 == "1")

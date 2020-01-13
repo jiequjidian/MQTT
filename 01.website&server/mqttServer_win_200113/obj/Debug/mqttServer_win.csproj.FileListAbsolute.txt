@@ -83,3 +83,17 @@ E:\05.Item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.csproj.Generat
 E:\05.Item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.csproj.CopyComplete
 E:\05.Item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.exe
 E:\05.Item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.pdb
+D:\08.item\01.MQTT\mqttServer_win_191203\bin\Debug\mqttServer_win.exe.config
+D:\08.item\01.MQTT\mqttServer_win_191203\bin\Debug\mqttServer_win.exe
+D:\08.item\01.MQTT\mqttServer_win_191203\bin\Debug\mqttServer_win.pdb
+D:\08.item\01.MQTT\mqttServer_win_191203\bin\Debug\MQTTnet.Core.dll
+D:\08.item\01.MQTT\mqttServer_win_191203\bin\Debug\MQTTnet.dll
+D:\08.item\01.MQTT\mqttServer_win_191203\bin\Debug\Newtonsoft.Json.dll
+D:\08.item\01.MQTT\mqttServer_win_191203\bin\Debug\Newtonsoft.Json.xml
+D:\08.item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.csprojAssemblyReference.cache
+D:\08.item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.Form1.resources
+D:\08.item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.Properties.Resources.resources
+D:\08.item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.csproj.GenerateResource.cache
+D:\08.item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.csproj.CopyComplete
+D:\08.item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.exe
+D:\08.item\01.MQTT\mqttServer_win_191203\obj\Debug\mqttServer_win.pdb
